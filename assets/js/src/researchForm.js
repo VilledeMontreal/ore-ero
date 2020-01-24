@@ -47,10 +47,6 @@ function getresearchObject() {
         fr: $('#frdescriptionwhatItDoes').val()
       }
     },
-    name: {
-      en: $('#enname').val(),
-      fr: $('#frname').val()
-    },
     homepageURL: {
       en: $('#enhomepageURL').val(),
       fr: $('#frhomepageURL').val()
@@ -89,7 +85,6 @@ function getresearchObject() {
 
   // More-groups
   addMoreLicences(researchObject);
-  
   $('#addMorereference ul.list-unstyled > li').each(function(i) {
     let id =
       $(this).attr('data-index') == '0' ? '' : $(this).attr('data-index');
@@ -143,6 +138,7 @@ function submitResearchForm() {
   resetButton.disabled = true;
 
   let researchObject = getresearchObject();
+  console.log('TCL: submitResearchForm -> researchObject', researchObject);
   let fileWriter = new YamlWriter(USERNAME, REPO_NAME);
   let file = `_data/research/${researchObject.researchAcronym.toLowerCase()}.yml`;
 
