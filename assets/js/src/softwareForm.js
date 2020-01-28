@@ -6,7 +6,6 @@
   submitInit submitConclusion
   getAdminObject getAdminCode hideNewAdminForm slugify
   addMoreLicences addMoreUses resetMoreGroup fillUseField fillLicenceField
-  getToday
 */
 
 const softwareSelect = $('.page-softwareForm #nameselect');
@@ -66,24 +65,14 @@ function getsoftwareObject() {
     administrations: [
       {
         adminCode: getAdminCode(),
-        uses: [
-          {
-            contact: {
-              email: $('#contactemail').val()
-            },
-            date: {
-              started: $('#date').val(),
-              metadataLastUpdated: getToday()
-            }
-          }
-        ]
+        uses: []
       }
     ]
   };
 
   // More-groups
   addMoreLicences(softwareObject);
-  addMoreUses(softwareObject, getAdminCode());
+  addMoreUses(softwareObject);
 
   // Optional fields
   if (
@@ -290,7 +279,7 @@ function submitFormSoftware() {
         $('html').attr('lang') == 'en'
           ? './open-source-softwares.html'
           : './logiciels-libres.html';
-      // submitConclusion(response, submitButton, resetButton, url);
+      submitConclusion(response, submitButton, resetButton, url);
     });
 }
 

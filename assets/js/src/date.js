@@ -15,4 +15,8 @@ function getToday() {
     (day < 10 ? '0' : '') +
     day
   );
-}
+};
+
+exports.testGetToday = () => {
+  return getToday();
+};
