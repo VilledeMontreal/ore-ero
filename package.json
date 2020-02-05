@@ -7,7 +7,9 @@
     "lint": "eslint assets/js/src/**",
     "open-licences": "licensee --errors-only",
     "prettify": "eslint assets/js/src/** --fix",
-    "test": "npm run lint && npm run open-licences"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -30,5 +32,9 @@
     "eslint-plugin-prettier": "^3.1.1",
     "licensee": "^7.0.3",
     "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "cypress": "^3.4.1",
+    "jest": "^25.1.0"
   }
 }
