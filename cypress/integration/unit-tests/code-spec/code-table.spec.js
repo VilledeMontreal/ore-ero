@@ -103,16 +103,15 @@ describe('Open Source Code', () => {
         });
     });
 
-    it.only('should contain correct links', () => {});
-
-    it.only('should open the correct modal', () => {
+    it('should open the correct modal', () => {
       cy.get(':nth-child(1) > .sorting_1').click();
       cy.get(':nth-child(1) > .sorting_1').then(name => {
         cy.get('.wb-overlay.open').contains(name.text());
       });
-      cy.get(':nth-child(1) > .sorting_1').click();
-    });
 
-    it('should contain correct links');
+      // click on the close button
+      cy.get('.wb-overlay.open .btn').click();
+      cy.get('.wb-overlay').should('not.be.visible');
+    });
   });
 });
