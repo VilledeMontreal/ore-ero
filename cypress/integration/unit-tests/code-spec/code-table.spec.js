@@ -31,6 +31,7 @@ describe('Open Source Code', () => {
         });
     });
   });
+
   context('French part', function() {
     // eslint-disable-next-line no-undef
     beforeEach(function() {
@@ -63,6 +64,7 @@ describe('Open Source Code', () => {
       '#dt_licence',
       '#dt_tag'
     ];
+
     // eslint-disable-next-line no-undef
     beforeEach(() => {
       cy.visit('http://localhost:4000/ore-ero/en/open-source-codes.html');
