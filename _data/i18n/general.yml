@@ -53,6 +53,12 @@ nav:
     link:
       en: ./open-source-softwares.html
       fr: ./logiciels-libres.html
+  learning:
+    en: Open Learning
+    fr: Cours libres
+    link:
+      en: ./open-learning.html
+      fr: ./cours-libres.html
   standard:
     en: Open Standard
     fr: Norme ouverte
