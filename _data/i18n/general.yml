@@ -58,7 +58,7 @@ nav:
     fr: Cours libres
     link:
       en: ./open-learning.html
-      fr: ./cours-libres.html
+      fr: ./cours-libre.html
   standard:
     en: Open Standard
     fr: Norme ouverte
