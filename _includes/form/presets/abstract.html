@@ -1,0 +1,10 @@
+{%- assign title = "abstract" -%}
+{%- include form/components/title.html id=include.idPreset title=title -%}
+<div class="row">
+    <div class="col-sm-6">
+        <h3>{{ site.data.i18n.form.presets.abstract.labels.whatWillYouLearn.subtitle[page.lang] }} </h3>
+        <p><small style="font-size: 75%">{{ site.data.i18n.form.presets.abstract.charactersLimit[page.lang] }}</small>
+        </p>
+        {%- include form/components/textarea-i18n.html id=include.idPreset title=title group="whatWillYouLearn" -%}
+    </div>
+</div>

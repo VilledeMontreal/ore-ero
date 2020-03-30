@@ -161,6 +161,41 @@ presets:
       howItWorks:
         en: Description on how it works
         fr: Description sur comment cela fonctionne
+  abstract:
+    title:
+      en: Description
+      fr: Description
+    labels:
+      whatWillYouLearn:
+        subtitle:
+          en: What will you learn?
+          fr: Qu'allez vous apprendre?
+        en:
+          en: English
+          fr: Anglais
+        fr:
+          en: French
+          fr: Français
+        schema:
+          en: What will you learn?
+          fr: Qu'allez vous apprendre?
+    label:
+      schema:
+        en: Description
+        fr: Description
+    charactersLimit:
+      en: (200 characters limit)
+      fr: (limite de 200 caractères)
+    infobulle:
+      en: Add brief descriptions on what the course teaches.
+      fr: Ajoutez une brève description, expliquant ce que le cours propose.
+      whatWillYouLearn:
+        en: Description on what it teaches
+        fr: Description de ce qui est enseigné
+    titles:
+      whatWillYouLearn:
+        en: Description on what it teaches
+        fr: Description de ce qui est enseigné
   designStatus:
     title:
       en: Design use status
@@ -835,6 +870,41 @@ design:
     infobulle:
       en: Select the date when the public administration started using the design.
       fr: Choisir la date lorsque l'administration publique a commencé à utiliser le design.
+  administrations: *administrations
+  uses:
+    title:
+      en: Informations about design users.
+      fr: Information à propos des utilisateurs du design
+  
+# Future project form specifics
+learning:
+  name:
+    title:
+      en: Course Title
+      fr: Titre du cours
+    label:
+      en: French course title
+      fr: Titre du cours en français
+      schema:
+        en: Course Title
+        fr: Titre du cours
+    labels:
+      select:
+        en: If you wish to update information of a course that already exists in our library, please select it below
+        fr: Si vous souhaitez mettre à jour les données d'un cours déjà ajouté au catalogue, veuillez le sélectionner de la liste
+    infobulle:
+      en: Add the title of the open course
+      fr: Ajouter le titre du cours libre
+  date:
+    title:
+      en: Started using
+      fr: Date de début d'utilisation
+    label:
+      en: Started using
+      fr: Date de début d'utilisation
+    infobulle:
+      en: Select the date when the public administration started offering the open course.
+      fr: Choisir la date lorsque l'administration publique a commencé à proposé le cours libre.
   administrations: *administrations
   uses:
     title:

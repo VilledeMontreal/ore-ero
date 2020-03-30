@@ -1,0 +1,45 @@
+---
+'46231500':
+  en: Art & Design
+  fr: Art et Conception
+  value: '46231500'
+'46231600':
+  en: Business
+  fr: Affaire
+  value: '46231600'
+'46232000':
+  en: Computer Science
+  fr: Informatique
+  value: '46232000'
+'46232100':
+  en: Data Science
+  fr: Science des données
+  value: '46232100'
+'46232200':
+  en: Education & Teaching
+  fr: Éducation & Enseignement
+  value: '46232200'
+'46232300':
+  en: Health & Medecine
+  fr: Santé et médecine
+  value: '46232300'
+'46232400':
+  en: Humanities
+  fr: Science humaine
+  value: '46232400'
+'46232500':
+  en: Mathematics
+  fr: Mathématique
+  value: '46232500'
+'46232600':
+  en: Programming
+  fr: Programmation
+  value: '46232600'
+'46232700':
+  en: Science
+  fr: Science
+  value: '46232700'
+'46232800':
+  en: Social Sciences
+  fr: Science Sociale
+  value: '46232800'

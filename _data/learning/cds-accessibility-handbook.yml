@@ -1,7 +1,7 @@
 ---
 schemaVersion: '1.0'
 description:
-  whatItDoes:
+  whatWillYouLearn:
     en: >-
       The Canadian Digital Service is committed to building accessible and
       inclusive services. Building accessible services means meeting the needs
@@ -10,21 +10,32 @@ description:
       Le Service numérique canadien s’est engagé à créer des services
       accessibles et inclusifs. Bâtir des services accessibles, c’est répondre
       aux besoins du plus grand nombre de personnes possible.
-designTypes:
-  - type:
-      en: Application
-      fr: Application
+type:
+  en: Application
+  fr: Application
+difficulty: 
+  en: intermediary
+  fr: intermediaire
 homepageURL:
   en: 'https://digital.canada.ca/a11y/'
   fr: 'https://numerique.canada.ca/a11y/'
-licences:
-  - URL:
-      en: 'https://github.com/cds-snc/accessibility-handbook/blob/master/LICENSE.md'
-      fr: 'https://github.com/cds-snc/accessibility-handbook/blob/master/LICENSE.md'
-    spdxID: CC0-1.0
 name:
   en: CDS Accessibility Handbook
   fr: Guide d'accessibilité du SNC
+category: '43232400'
+creator: 
+  en: University of Amsterdam
+  fr: intermediaire
+average duration: 15h
+tags:
+  en:
+    - software framework
+    - Robotics
+    - Health Data
+  fr:
+    - Robotiques
+    - Cadriciel
+    - Santé
 administrations:
   - adminCode: tbs-sct
     uses:
