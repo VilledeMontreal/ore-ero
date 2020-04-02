@@ -8,10 +8,6 @@ formGroups:
   - preset: learningCategory
   - preset: homepageURL
     param: {type: url}
-  - preset: team
-  - preset: empty
-    title: uses
-    param: {start: true}
   - preset: contact
     param: {phone: false}
   - widget: string
