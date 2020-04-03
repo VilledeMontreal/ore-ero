@@ -478,6 +478,36 @@ presets:
     infobulle:
       en: Select types to categorize this design.
       fr: Selectionner des types pour catégoriser ce design.
+  learningCategory:
+    title:
+      en: Category
+      fr: Categories
+    label:
+      en: Select a category
+      fr: Selectionner une categorie
+    infobulle:
+      en: Select a category for this course.
+      fr: Selectionner une catégorie pour ce cours.
+  learningType:
+    title:
+      en: Course type
+      fr: Type de cours
+    label:
+      en: Select a type
+      fr: Selectionner un type
+    infobulle:
+      en: Select types to categorize this course.
+      fr: Selectionner un type pour catégoriser ce cours.
+  difficulty:
+    title:
+      en: Course difficulty
+      fr: difficulté du cours
+    label:
+      en: Select a difficulty
+      fr: Selectionner une difficulté
+    infobulle:
+      en: Select a difficulty for this course.
+      fr: Selectionner une difficulté pour ce cours.
   newType:
     label:
       en:

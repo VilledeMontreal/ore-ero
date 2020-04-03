@@ -1,0 +1,13 @@
+---
+'43241500':
+  en: Video
+  fr: Vidéo
+  value: '43241500'
+'43241600':
+  en: Ebook
+  fr: Livre Éléctronique
+  value: '43241600'
+'43242000':
+  en: Mix(Video, Ebook)
+  fr: Mixte (Vidéo, Livre Éléctronique)
+  value: '43242000'

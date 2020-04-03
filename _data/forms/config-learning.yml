@@ -5,7 +5,10 @@ id: learning
 formGroups:
   - preset: selectLearning
   - preset: abstract
+  - preset: learningType
   - preset: learningCategory
+  - preset: tags
+  - preset: difficulty
   - preset: homepageURL
     param: {type: url}
   - preset: contact

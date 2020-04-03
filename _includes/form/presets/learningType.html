@@ -1,11 +1,11 @@
-{%- assign title = "learningCategory" -%}
+{%- assign title = "learningType" -%}
 <div class="form-group">
 
   {%- include form/components/label.html id=include.idPreset title=title %}
   <select class="form-control" id="{{ title }}" name="{{ title }}" required="required">
     <option value="">&nbsp;</option>
-    {%- for category in site.data.i18n.learningCategories -%}
-    <option value="{{ category[1].value }}">{{ category[1][page.lang] }}</option>
+    {%- for type in site.data.i18n.learningTypes -%}
+    <option value="{{ type[1].value }}">{{ type[1][page.lang] }}</option>
     {%- endfor %}
   </select>
 </div>
