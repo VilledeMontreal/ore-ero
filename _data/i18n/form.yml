@@ -483,18 +483,28 @@ presets:
       en: Category
       fr: Categories
     label:
-      en: Select a category
-      fr: Selectionner une categorie
+      en: Category
+      fr: Categories
     infobulle:
       en: Select a category for this course.
       fr: Selectionner une catégorie pour ce cours.
+  learninglanguage:
+    title:
+      en: Language
+      fr: Langue
+    label:
+      en: Language
+      fr: Langue
+    infobulle:
+      en: Select the language used in this course.
+      fr: Selectionner la langue utilisé dans ce cours.
   learningType:
     title:
       en: Course type
       fr: Type de cours
     label:
-      en: Select a type
-      fr: Selectionner un type
+      en: Course type
+      fr: Type de cours
     infobulle:
       en: Select types to categorize this course.
       fr: Selectionner un type pour catégoriser ce cours.
@@ -503,8 +513,8 @@ presets:
       en: Course difficulty
       fr: difficulté du cours
     label:
-      en: Select a difficulty
-      fr: Selectionner une difficulté
+      en: Difficulty
+      fr: Difficulté
     infobulle:
       en: Select a difficulty for this course.
       fr: Selectionner une difficulté pour ce cours.
@@ -913,11 +923,15 @@ learning:
       en: Course Title
       fr: Titre du cours
     label:
-      en: French course title
-      fr: Titre du cours en français
-      schema:
-        en: Course Title
-        fr: Titre du cours
+      en:
+        en: English course title
+        fr: Nom du cours en anglais
+      fr:
+        en: French course title
+        fr: Titre du cours en français
+    schema:
+      en: Course Title
+      fr: Titre du cours
     labels:
       select:
         en: If you wish to update information of a course that already exists in our library, please select it below

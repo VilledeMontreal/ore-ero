@@ -5,6 +5,7 @@ id: learning
 formGroups:
   - preset: selectLearning
   - preset: abstract
+  - preset: language
   - preset: learningType
   - preset: learningCategory
   - preset: tags
