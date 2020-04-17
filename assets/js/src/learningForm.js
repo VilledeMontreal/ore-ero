@@ -10,30 +10,15 @@
 */
 
 const learningSelect = $('.page-learningForm #nameselect');
-const adminSelect = $('.page-learningForm #adminCode');
 
-$(document).ready(function() {
-  $('#prbotSubmitlearningForm').click(function() {
-    if (submitInit()) {
-      if ($('#ennewAdminName').val() != '') submitLearningFormNewAdmin();
-      else submitFormLearning();
-    }
+$(document).ready(function () {
+  $('#prbotSubmitlearningForm').click(function () {
+    submitFormLearning();
   });
 
-  learningSelect.change(function() {
-    selectLearning();
-    if (adminSelect.val() != '') selectAdmin();
-  });
-
-  adminSelect.change(function() {
-    selectAdmin();
-  });
-
-  $('#formReset').click(function() {
+  $('#formReset').click(function () {
     $('#validation').trigger('reset');
     resetTypes();
-    hideNewAdminForm();
-    resetMoreGroup($('#addMorelicences'));
   });
 });
 
@@ -57,42 +42,22 @@ function getLearningObject() {
       en: $('#enname').val(),
       fr: $('#frname').val()
     },
-    administrations: [
-      {
-        adminCode: getAdminCode(),
-        uses: [
-          {
-            contact: {
-              email: $('#contactemail').val()
-            },
-            date: {
-              started: $('#date').val(),
-              metadataLastUpdated: getToday()
-            }
-          }
-        ]
-      }
-    ]
   };
 
-  // More-groups
-  addMoreLicences(learningObject);
-  addTypes(learningObject);
-  // Optional fields
   if (
-    $('#endescriptionhowItWorks').val() ||
-    $('#frdescriptionhowItWorks').val()
+    $('#enabstractwhatWillYouLearn').val() ||
+    $('#frabstractwhatWillYouLearn').val()
   ) {
     learningObject.description.howItWorks = {};
   }
-  if ($('#endescriptionhowItWorks').val()) {
+  if ($('#enabstractwhatWillYouLearn').val()) {
     learningObject.description.howItWorks.en = $(
-      '#endescriptionhowItWorks'
+      '#enabstractwhatWillYouLearn'
     ).val();
   }
-  if ($('#frdescriptionhowItWorks').val()) {
+  if ($('#frabstractwhatWillYouLearn').val()) {
     learningObject.description.howItWorks.fr = $(
-      '#frdescriptionhowItWorks'
+      '#frabstractwhatWillYouLearn'
     ).val();
   }
   if ($('#learningStatus').val()) {
@@ -141,48 +106,37 @@ function submitLearningFormNewAdmin() {
 
   let fileWriter = new YamlWriter(USERNAME, REPO_NAME);
   let learningFile = `_data/learning/${slugify(learningName)}.yml`;
-  let adminFile = `_data/administrations/${getSelectedOrgType()}.yml`;
 
   fileWriter
-    .mergeAdminFile(adminFile, adminObject, '', 'code')
-    .then(adminResult => {
-      fileWriter
-        .merge(learningFile, learningObject, 'administrations', 'adminCode')
-        .then(learningResult => {
-          return fetch(
-            PRBOT_URL,
-            getConfigUpdateLearningNewAdmin(
-              learningName,
-              adminName,
-              learningFile,
-              adminFile,
-              learningResult,
-              adminResult
-            )
-          );
-        })
-        .catch(err => {
-          if (err.status == 404) {
-            return fetch(
-              PRBOT_URL,
-              getConfigNewLearningNewAdmin(
-                learningName,
-                adminName,
-                learningFile,
-                adminFile,
-                learningObject,
-                adminResult
-              )
-            );
-          } else throw err;
-        })
-        .then(response => {
-          let url =
-            $('html').attr('lang') == 'en'
-              ? './open-learning.html'
-              : './learning-libre.html';
-          submitConclusion(response, submitButton, resetButton, url);
-        });
+    .merge(learningFile, learningObject, 'administrations', 'adminCode')
+    .then(learningResult => {
+      return fetch(
+        PRBOT_URL,
+        getConfigUpdateLearningNewAdmin(
+          learningName,
+          learningFile,
+          learningResult,
+        )
+      );
+    })
+    .catch(err => {
+      if (err.status == 404) {
+        return fetch(
+          PRBOT_URL,
+          getConfigNewLearningNewAdmin(
+            learningName,
+            learningFile,
+            learningObject,
+          )
+        );
+      } else throw err;
+    })
+    .then(response => {
+      let url =
+        $('html').attr('lang') == 'en'
+          ? './open-learning.html'
+          : './learning-libre.html';
+      submitConclusion(response, submitButton, resetButton, url);
     });
 }
 
@@ -307,7 +261,7 @@ function getConfigUpdate(result, file, ProjectName) {
         'Project: ***' +
         $('#enname').val() +
         '***\n' +
-        $('#endescriptionwhatItDoes').val() +
+        $('#enabstractwhatWillYouLearn').val() +
         '\n',
       commit: 'Committed by ' + $('#submitteremail').val(),
       author: {
@@ -338,7 +292,7 @@ function getConfigNew(learningObject, file, ProjectName) {
         'Project: ***' +
         $('#enname').val() +
         '***\n' +
-        $('#endescriptionwhatItDoes').val() +
+        $('#enabstractwhatWillYouLearn').val() +
         '\n',
       commit: 'Committed by ' + $('#submitteremail').val(),
       author: {
@@ -358,7 +312,7 @@ function getConfigNew(learningObject, file, ProjectName) {
 
 function selectLearning() {
   let value = learningSelect.val();
-  $.getJSON('https://canada-ca.github.io/ore-ero/learning.json', function(
+  $.getJSON('https://canada-ca.github.io/ore-ero/learning.json', function (
     result
   ) {
     if (result[value]) {
@@ -382,14 +336,12 @@ function addValueToFieldsLearning(obj) {
   $('#frname')
     .val(obj.name.fr)
     .prop('disabled', true);
-  $('#endescriptionwhatItDoes').val(obj.description.whatItDoes.en);
-  $('#frdescriptionwhatItDoes').val(obj.description.whatItDoes.fr);
 
   if (obj.description.howItWorks) {
     if (obj.description.howItWorks.en)
-      $('#endescriptionhowItWorks').val(obj.description.howItWorks.en);
+      $('#enabstractwhatWillYouLearn').val(obj.description.howItWorks.en);
     if (obj.description.howItWorks.fr)
-      $('#frdescriptionhowItWorks').val(obj.description.howItWorks.fr);
+      $('#frabstractwhatWillYouLearn').val(obj.description.howItWorks.fr);
   }
   $('#enhomepageURL').val(obj.homepageURL.en);
   $('#frhomepageURL').val(obj.homepageURL.fr);
@@ -407,10 +359,8 @@ function resetFieldsLearning() {
   $('#frname')
     .val('')
     .prop('disabled', false);
-  $('#endescriptionwhatItDoes').val('');
-  $('#frdescriptionwhatItDoes').val('');
-  $('#endescriptionhowItWorks').val('');
-  $('#frdescriptionhowItWorks').val('');
+  $('#enabstractwhatWillYouLearn').val('');
+  $('#frabstractwhatWillYouLearn').val('');
   $('#enhomepageURL').val('');
   $('#frhomepageURL').val('');
   resetMoreGroup($('#addMorelicences'));
@@ -421,7 +371,7 @@ function resetFieldsLearning() {
 function selectAdmin() {
   let learning = learningSelect.val();
   let administration = adminSelect.val();
-  $.getJSON('https://canada-ca.github.io/ore-ero/learning.json', function(
+  $.getJSON('https://canada-ca.github.io/ore-ero/learning.json', function (
     result
   ) {
     if (result[learning]) {

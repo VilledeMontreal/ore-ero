@@ -187,7 +187,7 @@ presets:
       en: (200 characters limit)
       fr: (limite de 200 caractères)
     infobulle:
-      en: Add brief descriptions on what the course teaches.
+      en: Add brief descriptions on what the material teaches.
       fr: Ajoutez une brève description, expliquant ce que le cours propose.
       whatWillYouLearn:
         en: Description on what it teaches
@@ -486,7 +486,7 @@ presets:
       en: Category
       fr: Categories
     infobulle:
-      en: Select a category for this course.
+      en: Select a category for this material.
       fr: Selectionner une catégorie pour ce cours.
   learninglanguage:
     title:
@@ -496,27 +496,27 @@ presets:
       en: Language
       fr: Langue
     infobulle:
-      en: Select the language used in this course.
+      en: Select the language used in this material.
       fr: Selectionner la langue utilisé dans ce cours.
   learningType:
     title:
-      en: Course type
+      en: Material type
       fr: Type de cours
     label:
-      en: Course type
+      en: Material type
       fr: Type de cours
     infobulle:
-      en: Select types to categorize this course.
+      en: Select types to categorize this material.
       fr: Selectionner un type pour catégoriser ce cours.
   difficulty:
     title:
-      en: Course difficulty
+      en: Material difficulty
       fr: difficulté du cours
     label:
       en: Difficulty
       fr: Difficulté
     infobulle:
-      en: Select a difficulty for this course.
+      en: Select a difficulty for this material.
       fr: Selectionner une difficulté pour ce cours.
   newType:
     label:
@@ -920,24 +920,24 @@ design:
 learning:
   name:
     title:
-      en: Course Title
+      en: Material Title
       fr: Titre du cours
     label:
       en:
-        en: English course title
+        en: English material title
         fr: Nom du cours en anglais
       fr:
-        en: French course title
+        en: French material title
         fr: Titre du cours en français
     schema:
-      en: Course Title
+      en: Material Title
       fr: Titre du cours
     labels:
       select:
-        en: If you wish to update information of a course that already exists in our library, please select it below
+        en: If you wish to update information of a material that already exists in our library, please select it below
         fr: Si vous souhaitez mettre à jour les données d'un cours déjà ajouté au catalogue, veuillez le sélectionner de la liste
     infobulle:
-      en: Add the title of the open course
+      en: Add the title of the open material
       fr: Ajouter le titre du cours libre
   date:
     title:
@@ -947,7 +947,7 @@ learning:
       en: Started using
       fr: Date de début d'utilisation
     infobulle:
-      en: Select the date when the public administration started offering the open course.
+      en: Select the date when the public administration started offering the open material.
       fr: Choisir la date lorsque l'administration publique a commencé à proposé le cours libre.
   administrations: *administrations
   uses:
